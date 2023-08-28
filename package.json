@@ -14,5 +14,6 @@
   },
   "author": "vatsal",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {}
 }
