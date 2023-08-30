@@ -9,16 +9,16 @@
 <li>![image](https://github.com/AryanSaxenaa/DiploEdge/assets/100140924/bfb79ab8-900e-4911-bbe3-02d92a12f01e)</li>
 </ul>
 <ul>
-Notes page
+<h1>Notes page</h1>
 <li>![image](https://github.com/AryanSaxenaa/DiploEdge/assets/100140924/f5f8f31a-8898-4fe1-849e-f5ef5002bb68)</li>
 <li>![image](https://github.com/AryanSaxenaa/DiploEdge/assets/100140924/5cb22e05-7768-45b2-994d-9484ca51fbbe)</li>
 <li>![image](https://github.com/AryanSaxenaa/DiploEdge/assets/100140924/3d31b0a8-9a6e-4a84-a306-6fa39cad2081)</li>
 </ul>
 <ul>
-Articles page
+<h1>Articles page</h1>h1>
 <li>![image](https://github.com/AryanSaxenaa/DiploEdge/assets/100140924/a2cda81a-7d47-4d3f-8eee-24d431ceb8d3)</li>
 </ul>
 <ul>
-Notices page
+<h1>Notices page</h1>h1>
 <li>![image](https://github.com/AryanSaxenaa/DiploEdge/assets/100140924/c0803ec8-5d3c-4ab7-828c-f689b9793ca5)</li>
 </ul>
