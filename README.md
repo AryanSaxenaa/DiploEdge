@@ -11,9 +11,9 @@
 ![image](https://github.com/AryanSaxenaa/DiploEdge/assets/100140924/5cb22e05-7768-45b2-994d-9484ca51fbbe)<br>
 ![image](https://github.com/AryanSaxenaa/DiploEdge/assets/100140924/3d31b0a8-9a6e-4a84-a306-6fa39cad2081)<br>
 <br><br><br>
-<h1>Articles page</h1>h1><br>
+<h1>Articles page</h1><br>
 ![image](https://github.com/AryanSaxenaa/DiploEdge/assets/100140924/a2cda81a-7d47-4d3f-8eee-24d431ceb8d3)
 <br><br><br>
-<h1>Notices page</h1>h1>
-<li>![image](https://github.com/AryanSaxenaa/DiploEdge/assets/100140924/c0803ec8-5d3c-4ab7-828c-f689b9793ca5)</li>
-</ul>
+<h1>Notices page</h1>
+![image](https://github.com/AryanSaxenaa/DiploEdge/assets/100140924/c0803ec8-5d3c-4ab7-828c-f689b9793ca5)
+
