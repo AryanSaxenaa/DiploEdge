@@ -14,15 +14,13 @@ mongoose.connect("mongodb://127.0.0.1:27017/mainDB");//to solve buffer timeout e
 
 //============defining schema for all the download data collections in the data base===================//
 
+
 const downloadSchema =new mongoose.Schema({
   contentTitle: String,
   contentLink:String,
-  contentBranch:String
+  contentBranch:String,
+  contentSem:Number
 });
-
-//=================defining schema for all the miscellaneous collections in the data base====================
-
-
 
 const noticeSchema ={
   noticeTitle: String,
@@ -95,15 +93,13 @@ app.post("/download",function(req,res){
   const download = new Download({
     contentTitle: req.body.Title,
     contentLink:req.body.Link,
-    contentBranch:req.body.Branch
+    contentBranch:req.body.Branch,
+    contentSem:req.body.Semester
   });
   Download.insertMany([download]);
   
   res.redirect("/downloads");
 })
-
-
-//====================================//post routes =======================================================
 
 app.post("/notices",function(req,res){      //post notice route
   
@@ -199,9 +195,6 @@ app.get("/post/:articleTitle",function(req,res) // getting value in parameter
           });
         }
       })
-      
-
-
 })
 
 

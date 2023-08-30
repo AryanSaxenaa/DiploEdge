@@ -1,10 +1,12 @@
 <%- include("partials/header") -%>
+<div id="article-notice-page"></div>
 
 <% posts.forEach(function(post){ %>
-
-    <h1><%= post.noticeTitle %></h1> 
+    <h1 class="article-notice-page-title"><%= post.noticeTitle %></h1> 
     <p> <%= post.noticeContent %>
     <a href="post/:<%= post.noticeLink %>"> Read me</a>
     </p>
+    <hr>
     <% }) %>
 <%- include("partials/footer") -%>
+<!--Footer to be removed if left align --->

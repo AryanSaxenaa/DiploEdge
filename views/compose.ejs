@@ -1,6 +1,4 @@
 <%- include("partials/header"); -%>
-
-
     <form class="article" action="/article"  method="post" autocomplete="off">
         <div class="form-group">
             <h1>Article</h1>
@@ -34,13 +32,14 @@
             <h1>Downloads</h1>
             <label>Title</label>
             <input type="text" name="Title" class="form-control">
-            <label>Branch</label>
+            <label>Branch</label> 
             <input type="text" name="Branch" class="form-control">
+            <label>Semester</label> 
+            <input type="number" name="Semester" class="form-control">
             <label>link</label>
             <input type="text" name="Link" class="form-control">
             <button class="btn btn-primary" type="submit" name="button">Add</button>
         </div>
     </form>
-
 
 <%- include("partials/footer"); -%>

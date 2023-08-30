@@ -1,122 +1,645 @@
 <%- include("partials/header"); -%>
 
+<style>
+    button{
+        display: block;
+    }
+
+    .init{
+        display: none;
+    }
+</style>
+<script>
+    function myFunction(menu) {
+        var x = document.getElementById(menu);
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+
+
 <div id="download">
 
-    <h1>Download</h1>
+    <h1 class="notes-heading"><i class="fa-solid fa-cloud-arrow-down fa-fade" style="color: #000000;"></i>Downloads</h1>
     
     <ul>
+        
+        <div id="Computer">
+            <li class="computer"><button class="main-button" onclick="myFunction('computer-sub-menu-1')">Computer</button><!---->
+                <div id="computer-sub-menu-1">
+                <ul>
+                    <button class="child-button" onclick="myFunction('computer-sem-menu-1')">1st semester</button><!---->
+                    <div id="computer-sem-menu-1" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
 
-        <li class="computer">Computer
-            <ul>
-                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="computer"){ %>
+                                        <% if(download.contentSem == 1){ %>  
+                                            
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> <!---->
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%>
+                                    
 
-                    <% if(download.contentBranch=="computer"){ %> 
-                    <li><%= download.contentTitle %> 
+                                </li> <% }%>
+                                <% }) %>  
+                        </li>
+                    </div>
+
+                    <button class="child-button" onclick="myFunction('sem-computer-sub-menu-2')">2nd semester</button><!---->
+                    <div id="sem-computer-sub-menu-2" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="computer"){ %>
+                                        <% if(download.contentSem == 2){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+
+                    <button  class="child-button" onclick="myFunction('sem-computer-sub-menu-3')">3rd semester</button>
+                    <div id="sem-computer-sub-menu-3" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="computer"){ %>
+                                        <% if(download.contentSem == 3){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> <!---->
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                            <hr>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+
+                    <button  class="child-button" onclick="myFunction('sem-computer-sub-menu-4')">4th semester</button>
+                    <div id="sem-computer-sub-menu-4" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="computer"){ %>
+                                        <% if(download.contentSem == 4){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+                    <button class="child-button" onclick="myFunction('sem-computer-sub-menu-5')">5th semester</button>
+                    <div id="sem-computer-sub-menu-5" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="computer"){ %>
+                                        <% if(download.contentSem == 5){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+
+                    <button class="child-button" onclick="myFunction('sem-computer-sub-menu-6')">6th semester</button>
+                    <div id="sem-computer-sub-menu-6" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="computer"){ %>
+                                        <% if(download.contentSem == 6){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
                     
-                    <a href="<%= download.contentLink %>"> Download</a>
-                    <% }%>
-                </li>
-                <% }) %> 
-                
-            </ul>
+                </ul>
+            </li>
+            </div>
+       
 
-        </li>
 
-        <li class="electronics">Electronics
-            <ul>
-                <% downloadarray.forEach(function(download){ %>
+        <div id="Electronics">
+            <li class="electronics"><button class="main-button" onclick="myFunction('electronics-sub-menu-1')">Electronics</button>
+                <div id="electronics-sub-menu-1">
+                <ul>
+                    <button class="child-button" onclick="myFunction('electronics-sem-menu-1')">1st semester</button>
+                    <div id="electronics-sem-menu-1" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
 
-                    <% if(download.contentBranch=="electronics"){ %> 
-                    <li><%= download.contentTitle %> 
-                        
-                    <a href="<%= download.contentLink %>"> Download</a>
-                    <% }%>
-                </li>
-                <% }) %> 
-                
-            </ul>
+                                    <% if(download.contentBranch=="electronics"){ %>
+                                        <% if(download.contentSem == 1){ %>  
+                                            
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%>
+                                    
 
-        </li>
+                                </li> <% }%>
+                                <% }) %>  
+                        </li>
+                    </div>
 
-        <li class="electrical">Electrical
-            <ul>
-                <% downloadarray.forEach(function(download){ %>
+                    <button class="child-button" onclick="myFunction('sem-electronics-sub-menu-2')">2nd semester</button>
+                    <div id="sem-electronics-sub-menu-2" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="electronics"){ %>
+                                        <% if(download.contentSem == 2){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
 
-                    <% if(download.contentBranch=="electrical"){ %> 
-                    <li><%= download.contentTitle %> 
-                        
-                    <a href="<%= download.contentLink %>"> Download</a>
-                    <% }%>
-                </li>
-                <% }) %> 
-                
-            </ul>
+                    <button class="child-button" onclick="myFunction('sem-electronics-sub-menu-3')">3rd semester</button>
+                    <div id="sem-electronics-sub-menu-3" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="electronics"){ %>
+                                        <% if(download.contentSem == 3){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
 
-        </li>
+                    <button class="child-button" onclick="myFunction('sem-electronics-sub-menu-4')">4th semester</button>
+                    <div id="sem-electronics-sub-menu-4" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="electronics"){ %>
+                                        <% if(download.contentSem == 4){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+                    <button  class="child-button" onclick="myFunction('sem-electronics-sub-menu-5')">5th semester</button>
+                    <div id="sem-electronics-sub-menu-5" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="electronics"){ %>
+                                        <% if(download.contentSem == 5){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
 
-        <li class="instrumentation">Instrumentation
-            <ul>
-                <% downloadarray.forEach(function(download){ %>
+                    <button class="child-button" onclick="myFunction('sem-electronics-sub-menu-6')">6th semester</button>
+                    <div id="sem-electronics-sub-menu-6" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="electronics"){ %>
+                                        <% if(download.contentSem == 6){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+                    
+                </ul>
+            </li>
+            </div>
+        
 
-                    <% if(download.contentBranch=="instrumentation"){ %> 
-                    <li><%= download.contentTitle %> 
-                        
-                    <a href="<%= download.contentLink %>"> Download</a>
-                    <% }%>
-                </li>
-                <% }) %> 
-                
-            </ul>
 
-        </li>
+        <div id="Electrical">
+            <li class="electrical"><button class="main-button" onclick="myFunction('electrical-sub-menu-1')">Electrical</button>
+                <div id="electrical-sub-menu-1">
+                <ul>
+                    <button class="child-button" onclick="myFunction('electrical-sem-menu-1')">1st semester</button>
+                    <div id="electrical-sem-menu-1" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
 
-        <li class="mechanical">Mechanical
-            <ul>
-                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="electrical"){ %>
+                                        <% if(download.contentSem == 1){ %>  
+                                            
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%>
+                                    
 
-                    <% if(download.contentBranch=="mechanical"){ %> 
-                    <li><%= download.contentTitle %> 
-                        
-                    <a href="<%= download.contentLink %>"> Download</a>
-                    <% }%>
-                </li>
-                <% }) %> 
-                
-            </ul>
+                                </li> <% }%>
+                                <% }) %>  
+                        </li>
+                    </div>
 
-        </li>
+                    <button class="child-button"  onclick="myFunction('sem-electrical-sub-menu-2')">2nd semester</button>
+                    <div id="sem-electrical-sub-menu-2" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="electrical"){ %>
+                                        <% if(download.contentSem == 2){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
 
-        <li class="civil">Civil
-            <ul>
-                <% downloadarray.forEach(function(download){ %>
+                    <button class="child-button" onclick="myFunction('sem-electrical-sub-menu-3')">3rd semester</button>
+                    <div id="sem-electrical-sub-menu-3" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="electrical"){ %>
+                                        <% if(download.contentSem == 3){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
 
-                    <% if(download.contentBranch=="civil"){ %> 
-                    <li><%= download.contentTitle %> 
-                        
-                    <a href="<%= download.contentLink %>"> Download</a>
-                    <% }%>
-                </li>
-                <% }) %> 
-                
-            </ul>
+                    <button class="child-button" onclick="myFunction('sem-electrical-sub-menu-4')">4th semester</button>
+                    <div id="sem-electrical-sub-menu-4" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="electrical"){ %>
+                                        <% if(download.contentSem == 4){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+                    <button class="child-button" onclick="myFunction('sem-electrical-sub-menu-5')">5th semester</button>
+                    <div id="sem-electrical-sub-menu-5" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="electrical"){ %>
+                                        <% if(download.contentSem == 5){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
 
-        </li>
+                    <button class="child-button" onclick="myFunction('sem-electrical-sub-menu-6')">6th semester</button>
+                    <div id="sem-electrical-sub-menu-6" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="electrical"){ %>
+                                        <% if(download.contentSem == 6){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+                    
+                </ul>
+            </li>
+            </div>
+        
 
-        <li class="architecture">Architecture
-            <ul>
-                <% downloadarray.forEach(function(download){ %>
 
-                    <% if(download.contentBranch=="architecture"){ %> 
-                    <li><%= download.contentTitle %> 
-                        
-                    <a href="<%= download.contentLink %>"> Download</a>
-                    <% }%>
-                </li>
-                <% }) %> 
-                
-            </ul>
+        
 
-        </li>
+        <div id="Instrumentation">
+            <li class="instrumentation"><button class="main-button"  onclick="myFunction('instrumentation-sub-menu-1')">Instrumentation</button>
+                <div id="instrumentation-sub-menu-1">
+                <ul>
+                    <button class="child-button" onclick="myFunction('instrumentation-sem-menu-1')">1st semester</button>
+                    <div id="instrumentation-sem-menu-1" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
 
-</div>  
+                                    <% if(download.contentBranch=="instrumentation"){ %>
+                                        <% if(download.contentSem == 1){ %>  
+                                            
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%>
+                                    
+
+                                </li> <% }%>
+                                <% }) %>  
+                        </li>
+                    </div>
+
+                    <button class="child-button"  onclick="myFunction('sem-instrumentation-sub-menu-2')">2nd semester</button>
+                    <div id="sem-instrumentation-sub-menu-2" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="instrumentation"){ %>
+                                        <% if(download.contentSem == 2){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+
+                    <button class="child-button" onclick="myFunction('sem-instrumentation-sub-menu-3')">3rd semester</button>
+                    <div id="sem-instrumentation-sub-menu-3" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="instrumentation"){ %>
+                                        <% if(download.contentSem == 3){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+
+                    <button class="child-button" onclick="myFunction('sem-instrumentation-sub-menu-4')">4th semester</button>
+                    <div id="sem-instrumentation-sub-menu-4" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="instrumentation"){ %>
+                                        <% if(download.contentSem == 4){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+                    <button class="child-button" onclick="myFunction('sem-instrumentation-sub-menu-5')">5th semester</button>
+                    <div id="sem-instrumentation-sub-menu-5" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="instrumentation"){ %>
+                                        <% if(download.contentSem == 5){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+
+                    <button class="child-button" onclick="myFunction('sem-instrumentation-sub-menu-6')">6th semester</button>
+                    <div id="sem-instrumentation-sub-menu-6" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="instrumentation"){ %>
+                                        <% if(download.contentSem == 6){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+                    
+                </ul>
+            </li>
+            </div>
+        
+
+        <div id="Civil">
+            <li class="civil"><button class="main-button" onclick="myFunction('civil-sub-menu-1')">Civil</button>
+                <div id="civil-sub-menu-1">
+                <ul>
+                    <button class="child-button" onclick="myFunction('civil-sem-menu-1')">1st semester</button>
+                    <div id="civil-sem-menu-1" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+
+                                    <% if(download.contentBranch=="civil"){ %>
+                                        <% if(download.contentSem == 1){ %>  
+                                            
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%>
+                                    
+
+                                </li> <% }%>
+                                <% }) %>  
+                        </li>
+                    </div>
+
+                    <button class="child-button" onclick="myFunction('sem-civil-sub-menu-2')">2nd semester</button>
+                    <div id="sem-civil-sub-menu-2" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="civil"){ %>
+                                        <% if(download.contentSem == 2){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+
+                    <button class="child-button" onclick="myFunction('sem-civil-sub-menu-3')">3rd semester</button>
+                    <div id="sem-civil-sub-menu-3" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="civil"){ %>
+                                        <% if(download.contentSem == 3){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+
+                    <button class="child-button" onclick="myFunction('sem-civil-sub-menu-4')">4th semester</button>
+                    <div id="sem-civil-sub-menu-4" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="civil"){ %>
+                                        <% if(download.contentSem == 4){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+                    <button class="child-button" onclick="myFunction('sem-civil-sub-menu-5')">5th semester</button>
+                    <div id="sem-civil-sub-menu-5" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="civil"){ %>
+                                        <% if(download.contentSem == 5){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+
+                    <button class="child-button" onclick="myFunction('sem-civil-sub-menu-6')">6th semester</button>
+                    <div id="sem-civil-sub-menu-6" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="civil"){ %>
+                                        <% if(download.contentSem == 6){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+                    
+                </ul>
+            </li>
+            </div>
+        
+
+
+        <div id="Mechanical">
+            <li class="mechanical"><button class="main-button" onclick="myFunction('mechanical-sub-menu-1')">Mechanical</button>
+                <div id="mechanical-sub-menu-1">
+                <ul>
+                    <button class="child-button" onclick="myFunction('mechanical-sem-menu-1')">1st semester</button>
+                    <div id="mechanical-sem-menu-1" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+
+                                    <% if(download.contentBranch=="mechanical"){ %>
+                                        <% if(download.contentSem == 1){ %>  
+                                            
+                                            <li  class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%>
+                                    
+
+                                </li> <% }%>
+                                <% }) %>  
+                        </li>
+                    </div>
+
+                    <button class="child-button" onclick="myFunction('sem-mechanical-sub-menu-2')">2nd semester</button>
+                    <div id="sem-mechanical-sub-menu-2" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="mechanical"){ %>
+                                        <% if(download.contentSem == 2){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+
+                    <button class="child-button"  onclick="myFunction('sem-mechanical-sub-menu-3')">3rd semester</button>
+                    <div id="sem-mechanical-sub-menu-3" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="mechanical"){ %>
+                                        <% if(download.contentSem == 3){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+
+                    <button class="child-button"  onclick="myFunction('sem-mechanical-sub-menu-4')">4th semester</button>
+                    <div id="sem-mechanical-sub-menu-4" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="mechanical"){ %>
+                                        <% if(download.contentSem == 4){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+                    <button  class="child-button"  onclick="myFunction('sem-mechanical-sub-menu-5')">5th semester</button>
+                    <div id="sem-mechanical-sub-menu-5" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="mechanical"){ %>
+                                        <% if(download.contentSem == 5){ %>  
+                                            <li class="child-download-link"><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+
+                    <button  class="child-button" onclick="myFunction('sem-mechanical-sub-menu-6')">6th semester</button>
+                    <div id="sem-mechanical-sub-menu-6" class="init">
+                        <li>
+                                <% downloadarray.forEach(function(download){ %>
+                                    <% if(download.contentBranch=="mechanical"){ %>
+                                        <% if(download.contentSem == 6){ %>  
+                                            <li class="child-download-link"><i class="fa-solid fa-download" style="color: #000000;padding: 1%;"></i><%= download.contentTitle %> 
+                                            <a href="<%= download.contentLink %>"> Download</a>
+                                        <% }%> 
+                                </li><% } %>
+                                <% }) %>  
+                            
+                        </li>
+                    </div>
+                    
+                </ul>
+            </li>
+            </div>
+        
+
+    </ul>
+</div>
 <%- include("partials/footer"); -%>
